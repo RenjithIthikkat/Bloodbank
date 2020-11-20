@@ -1,0 +1,14 @@
+﻿<Window x:Class="BloodBank.AdminDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BloodBank"
+        mc:Ignorable="d"
+        Title="Admin Dashboard" Height="650" Width="1000">
+    <Grid>
+        <Button x:Name="ViewDonorsBtn" Content="View Donors" HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="ViewDonorsBtn_Click"/>
+        <Button x:Name="AddDonorBtn" Content="Add Donor" HorizontalAlignment="Left" Margin="160,40,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="AddDonorBtn_Click"/>
+        <Button x:Name="SearchBloodBtn" Content="Check Blood Availabilty" HorizontalAlignment="Left" Margin="280,40,0,0" VerticalAlignment="Top" Width="140" Height="30" Click="SearchBloodBtn_Click"/>
+    </Grid>
+</Window>

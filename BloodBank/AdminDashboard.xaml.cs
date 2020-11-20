@@ -10,25 +10,34 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BloodBank
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AdminDashboard.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AdminDashboard : Window
     {
-        public MainWindow()
+        public AdminDashboard()
         {
             InitializeComponent();
         }
 
-        private void LoginBtn_Click(object sender, RoutedEventArgs e)
+        private void ViewDonorsBtn_Click(object sender, RoutedEventArgs e)
         {
-            AdminDashboard adminDashboard = new AdminDashboard();
-            adminDashboard.Show();
+            ViewDonors viewDonors = new ViewDonors();
+            viewDonors.ShowDialog();
+        }
+
+        private void AddDonorBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SearchBloodBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
