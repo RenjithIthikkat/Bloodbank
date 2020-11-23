@@ -10,5 +10,6 @@
         <Button x:Name="ViewDonorsBtn" Content="View Donors" HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="ViewDonorsBtn_Click"/>
         <Button x:Name="AddDonorBtn" Content="Add Donor" HorizontalAlignment="Left" Margin="160,40,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="AddDonorBtn_Click"/>
         <Button x:Name="SearchBloodBtn" Content="Check Blood Availabilty" HorizontalAlignment="Left" Margin="280,40,0,0" VerticalAlignment="Top" Width="140" Height="30" Click="SearchBloodBtn_Click"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="40,146,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
