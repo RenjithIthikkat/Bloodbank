@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BloodBankDB">
+  <DataContextMoniker Name="/BloodBankDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="31948be2-ee6c-4670-a2c1-5b26b41a2b84" absoluteBounds="3.875, 1.375, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/BloodBankDBDataContext/Donor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0d26479a-5129-4e5a-8649-fa1c934bcbf7" absoluteBounds="3.89, 1.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -23,6 +23,8 @@ namespace BloodBank
         public MainWindow()
         {
             InitializeComponent();
+
+            BloodBankDBDataContext dc = new BloodBankDBDataContext();
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
