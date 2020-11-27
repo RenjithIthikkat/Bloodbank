@@ -19,9 +19,17 @@ namespace BloodBank
     /// </summary>
     public partial class ViewDonors : Window
     {
+        BloodBankDBDataContext dc;
         public ViewDonors()
         {
             InitializeComponent();
+            dc = new BloodBankDBDataContext();
+
+            DonorsDataGrid.ItemsSource = dc.Donors;
         }
+
+
+
+     
     }
 }

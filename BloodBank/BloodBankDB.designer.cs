@@ -30,6 +30,15 @@ namespace BloodBank
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertBloodGroup(BloodGroup instance);
+    partial void UpdateBloodGroup(BloodGroup instance);
+    partial void DeleteBloodGroup(BloodGroup instance);
+    partial void InsertProvince(Province instance);
+    partial void UpdateProvince(Province instance);
+    partial void DeleteProvince(Province instance);
+    partial void InsertCity(City instance);
+    partial void UpdateCity(City instance);
+    partial void DeleteCity(City instance);
     partial void InsertDonor(Donor instance);
     partial void UpdateDonor(Donor instance);
     partial void DeleteDonor(Donor instance);
@@ -65,12 +74,471 @@ namespace BloodBank
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<BloodGroup> BloodGroups
+		{
+			get
+			{
+				return this.GetTable<BloodGroup>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Province> Provinces
+		{
+			get
+			{
+				return this.GetTable<Province>();
+			}
+		}
+		
+		public System.Data.Linq.Table<City> Cities
+		{
+			get
+			{
+				return this.GetTable<City>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Donor> Donors
 		{
 			get
 			{
 				return this.GetTable<Donor>();
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BloodGroup")]
+	public partial class BloodGroup : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Name;
+		
+		private EntitySet<Donor> _Donors;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    #endregion
+		
+		public BloodGroup()
+		{
+			this._Donors = new EntitySet<Donor>(new Action<Donor>(this.attach_Donors), new Action<Donor>(this.detach_Donors));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BloodGroup_Donor", Storage="_Donors", ThisKey="Id", OtherKey="bloodGroup")]
+		public EntitySet<Donor> Donors
+		{
+			get
+			{
+				return this._Donors;
+			}
+			set
+			{
+				this._Donors.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Donors(Donor entity)
+		{
+			this.SendPropertyChanging();
+			entity.BloodGroup1 = this;
+		}
+		
+		private void detach_Donors(Donor entity)
+		{
+			this.SendPropertyChanging();
+			entity.BloodGroup1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Province")]
+	public partial class Province : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _ProvinceName;
+		
+		private EntitySet<City> _Cities;
+		
+		private EntitySet<Donor> _Donors;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnProvinceNameChanging(string value);
+    partial void OnProvinceNameChanged();
+    #endregion
+		
+		public Province()
+		{
+			this._Cities = new EntitySet<City>(new Action<City>(this.attach_Cities), new Action<City>(this.detach_Cities));
+			this._Donors = new EntitySet<Donor>(new Action<Donor>(this.attach_Donors), new Action<Donor>(this.detach_Donors));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProvinceName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ProvinceName
+		{
+			get
+			{
+				return this._ProvinceName;
+			}
+			set
+			{
+				if ((this._ProvinceName != value))
+				{
+					this.OnProvinceNameChanging(value);
+					this.SendPropertyChanging();
+					this._ProvinceName = value;
+					this.SendPropertyChanged("ProvinceName");
+					this.OnProvinceNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Province_City", Storage="_Cities", ThisKey="Id", OtherKey="Province")]
+		public EntitySet<City> Cities
+		{
+			get
+			{
+				return this._Cities;
+			}
+			set
+			{
+				this._Cities.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Province_Donor", Storage="_Donors", ThisKey="Id", OtherKey="province")]
+		public EntitySet<Donor> Donors
+		{
+			get
+			{
+				return this._Donors;
+			}
+			set
+			{
+				this._Donors.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Cities(City entity)
+		{
+			this.SendPropertyChanging();
+			entity.Province1 = this;
+		}
+		
+		private void detach_Cities(City entity)
+		{
+			this.SendPropertyChanging();
+			entity.Province1 = null;
+		}
+		
+		private void attach_Donors(Donor entity)
+		{
+			this.SendPropertyChanging();
+			entity.Province1 = this;
+		}
+		
+		private void detach_Donors(Donor entity)
+		{
+			this.SendPropertyChanging();
+			entity.Province1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.City")]
+	public partial class City : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _CityName;
+		
+		private int _Province;
+		
+		private EntitySet<Donor> _Donors;
+		
+		private EntityRef<Province> _Province1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnCityNameChanging(string value);
+    partial void OnCityNameChanged();
+    partial void OnProvinceChanging(int value);
+    partial void OnProvinceChanged();
+    #endregion
+		
+		public City()
+		{
+			this._Donors = new EntitySet<Donor>(new Action<Donor>(this.attach_Donors), new Action<Donor>(this.detach_Donors));
+			this._Province1 = default(EntityRef<Province>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CityName
+		{
+			get
+			{
+				return this._CityName;
+			}
+			set
+			{
+				if ((this._CityName != value))
+				{
+					this.OnCityNameChanging(value);
+					this.SendPropertyChanging();
+					this._CityName = value;
+					this.SendPropertyChanged("CityName");
+					this.OnCityNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Province", DbType="Int NOT NULL")]
+		public int Province
+		{
+			get
+			{
+				return this._Province;
+			}
+			set
+			{
+				if ((this._Province != value))
+				{
+					if (this._Province1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProvinceChanging(value);
+					this.SendPropertyChanging();
+					this._Province = value;
+					this.SendPropertyChanged("Province");
+					this.OnProvinceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_Donor", Storage="_Donors", ThisKey="Id", OtherKey="city")]
+		public EntitySet<Donor> Donors
+		{
+			get
+			{
+				return this._Donors;
+			}
+			set
+			{
+				this._Donors.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Province_City", Storage="_Province1", ThisKey="Province", OtherKey="Id", IsForeignKey=true)]
+		public Province Province1
+		{
+			get
+			{
+				return this._Province1.Entity;
+			}
+			set
+			{
+				Province previousValue = this._Province1.Entity;
+				if (((previousValue != value) 
+							|| (this._Province1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Province1.Entity = null;
+						previousValue.Cities.Remove(this);
+					}
+					this._Province1.Entity = value;
+					if ((value != null))
+					{
+						value.Cities.Add(this);
+						this._Province = value.Id;
+					}
+					else
+					{
+						this._Province = default(int);
+					}
+					this.SendPropertyChanged("Province1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Donors(Donor entity)
+		{
+			this.SendPropertyChanging();
+			entity.City1 = this;
+		}
+		
+		private void detach_Donors(Donor entity)
+		{
+			this.SendPropertyChanging();
+			entity.City1 = null;
 		}
 	}
 	
@@ -82,9 +550,7 @@ namespace BloodBank
 		
 		private int _Id;
 		
-		private string _firstName;
-		
-		private string _lastName;
+		private string _Name;
 		
 		private string _phone;
 		
@@ -92,15 +558,21 @@ namespace BloodBank
 		
 		private System.Nullable<int> _age;
 		
-		private System.Nullable<int> _gender;
+		private string _gender;
 		
-		private System.Nullable<int> _province;
+		private int _province;
 		
-		private string _city;
+		private int _city;
 		
 		private System.Nullable<System.DateTime> _date;
 		
 		private int _bloodAvailable;
+		
+		private EntityRef<BloodGroup> _BloodGroup1;
+		
+		private EntityRef<Province> _Province1;
+		
+		private EntityRef<City> _City1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -108,21 +580,19 @@ namespace BloodBank
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnfirstNameChanging(string value);
-    partial void OnfirstNameChanged();
-    partial void OnlastNameChanging(string value);
-    partial void OnlastNameChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
     partial void OnphoneChanging(string value);
     partial void OnphoneChanged();
     partial void OnbloodGroupChanging(int value);
     partial void OnbloodGroupChanged();
     partial void OnageChanging(System.Nullable<int> value);
     partial void OnageChanged();
-    partial void OngenderChanging(System.Nullable<int> value);
+    partial void OngenderChanging(string value);
     partial void OngenderChanged();
-    partial void OnprovinceChanging(System.Nullable<int> value);
+    partial void OnprovinceChanging(int value);
     partial void OnprovinceChanged();
-    partial void OncityChanging(string value);
+    partial void OncityChanging(int value);
     partial void OncityChanged();
     partial void OndateChanging(System.Nullable<System.DateTime> value);
     partial void OndateChanged();
@@ -132,6 +602,9 @@ namespace BloodBank
 		
 		public Donor()
 		{
+			this._BloodGroup1 = default(EntityRef<BloodGroup>);
+			this._Province1 = default(EntityRef<Province>);
+			this._City1 = default(EntityRef<City>);
 			OnCreated();
 		}
 		
@@ -155,47 +628,27 @@ namespace BloodBank
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstName", DbType="VarChar(50)")]
-		public string firstName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
 		{
 			get
 			{
-				return this._firstName;
+				return this._Name;
 			}
 			set
 			{
-				if ((this._firstName != value))
+				if ((this._Name != value))
 				{
-					this.OnfirstNameChanging(value);
+					this.OnNameChanging(value);
 					this.SendPropertyChanging();
-					this._firstName = value;
-					this.SendPropertyChanged("firstName");
-					this.OnfirstNameChanged();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastName", DbType="VarChar(50)")]
-		public string lastName
-		{
-			get
-			{
-				return this._lastName;
-			}
-			set
-			{
-				if ((this._lastName != value))
-				{
-					this.OnlastNameChanging(value);
-					this.SendPropertyChanging();
-					this._lastName = value;
-					this.SendPropertyChanged("lastName");
-					this.OnlastNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string phone
 		{
 			get
@@ -226,6 +679,10 @@ namespace BloodBank
 			{
 				if ((this._bloodGroup != value))
 				{
+					if (this._BloodGroup1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnbloodGroupChanging(value);
 					this.SendPropertyChanging();
 					this._bloodGroup = value;
@@ -255,8 +712,8 @@ namespace BloodBank
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender", DbType="Int")]
-		public System.Nullable<int> gender
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender", DbType="VarChar(50)")]
+		public string gender
 		{
 			get
 			{
@@ -275,8 +732,8 @@ namespace BloodBank
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province", DbType="Int")]
-		public System.Nullable<int> province
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province", DbType="Int NOT NULL")]
+		public int province
 		{
 			get
 			{
@@ -286,6 +743,10 @@ namespace BloodBank
 			{
 				if ((this._province != value))
 				{
+					if (this._Province1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnprovinceChanging(value);
 					this.SendPropertyChanging();
 					this._province = value;
@@ -295,8 +756,8 @@ namespace BloodBank
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="VarChar(50)")]
-		public string city
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="Int NOT NULL")]
+		public int city
 		{
 			get
 			{
@@ -306,6 +767,10 @@ namespace BloodBank
 			{
 				if ((this._city != value))
 				{
+					if (this._City1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OncityChanging(value);
 					this.SendPropertyChanging();
 					this._city = value;
@@ -315,7 +780,7 @@ namespace BloodBank
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date")]
 		public System.Nullable<System.DateTime> date
 		{
 			get
@@ -351,6 +816,108 @@ namespace BloodBank
 					this._bloodAvailable = value;
 					this.SendPropertyChanged("bloodAvailable");
 					this.OnbloodAvailableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BloodGroup_Donor", Storage="_BloodGroup1", ThisKey="bloodGroup", OtherKey="Id", IsForeignKey=true)]
+		public BloodGroup BloodGroup1
+		{
+			get
+			{
+				return this._BloodGroup1.Entity;
+			}
+			set
+			{
+				BloodGroup previousValue = this._BloodGroup1.Entity;
+				if (((previousValue != value) 
+							|| (this._BloodGroup1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._BloodGroup1.Entity = null;
+						previousValue.Donors.Remove(this);
+					}
+					this._BloodGroup1.Entity = value;
+					if ((value != null))
+					{
+						value.Donors.Add(this);
+						this._bloodGroup = value.Id;
+					}
+					else
+					{
+						this._bloodGroup = default(int);
+					}
+					this.SendPropertyChanged("BloodGroup1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Province_Donor", Storage="_Province1", ThisKey="province", OtherKey="Id", IsForeignKey=true)]
+		public Province Province1
+		{
+			get
+			{
+				return this._Province1.Entity;
+			}
+			set
+			{
+				Province previousValue = this._Province1.Entity;
+				if (((previousValue != value) 
+							|| (this._Province1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Province1.Entity = null;
+						previousValue.Donors.Remove(this);
+					}
+					this._Province1.Entity = value;
+					if ((value != null))
+					{
+						value.Donors.Add(this);
+						this._province = value.Id;
+					}
+					else
+					{
+						this._province = default(int);
+					}
+					this.SendPropertyChanged("Province1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_Donor", Storage="_City1", ThisKey="city", OtherKey="Id", IsForeignKey=true)]
+		public City City1
+		{
+			get
+			{
+				return this._City1.Entity;
+			}
+			set
+			{
+				City previousValue = this._City1.Entity;
+				if (((previousValue != value) 
+							|| (this._City1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._City1.Entity = null;
+						previousValue.Donors.Remove(this);
+					}
+					this._City1.Entity = value;
+					if ((value != null))
+					{
+						value.Donors.Add(this);
+						this._city = value.Id;
+					}
+					else
+					{
+						this._city = default(int);
+					}
+					this.SendPropertyChanged("City1");
 				}
 			}
 		}
