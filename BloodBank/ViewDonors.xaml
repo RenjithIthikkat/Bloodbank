@@ -9,7 +9,7 @@
     <Grid>
         <ComboBox Name="FilterComboBx" HorizontalAlignment="Left" Margin="236,10,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="FilterTextBox" HorizontalAlignment="Left" Height="23" Margin="380,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <DataGrid x:Name="DonorsDataGrid" HorizontalAlignment="Left" Height="555" Margin="0,50,0,0" VerticalAlignment="Top" Width="992" SelectionChanged="DonorsDataGrid_SelectionChanged"/>
+        <DataGrid x:Name="DonorsDataGrid" HorizontalAlignment="Left" Height="555" Margin="0,50,0,0" VerticalAlignment="Top" Width="992"/>
 
     </Grid>
 </Window>
