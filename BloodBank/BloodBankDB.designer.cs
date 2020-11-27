@@ -175,7 +175,7 @@ namespace BloodBank
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BloodGroup_Donor", Storage="_Donors", ThisKey="Id", OtherKey="bloodGroup")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BloodGroup_Donor", Storage="_Donors", ThisKey="Id", OtherKey="BloodGroup")]
 		public EntitySet<Donor> Donors
 		{
 			get
@@ -305,7 +305,7 @@ namespace BloodBank
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Province_Donor", Storage="_Donors", ThisKey="Id", OtherKey="province")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Province_Donor", Storage="_Donors", ThisKey="Id", OtherKey="Province")]
 		public EntitySet<Donor> Donors
 		{
 			get
@@ -462,7 +462,7 @@ namespace BloodBank
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_Donor", Storage="_Donors", ThisKey="Id", OtherKey="city")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_Donor", Storage="_Donors", ThisKey="Id", OtherKey="City")]
 		public EntitySet<Donor> Donors
 		{
 			get
@@ -552,21 +552,21 @@ namespace BloodBank
 		
 		private string _Name;
 		
-		private string _phone;
+		private string _Phone;
 		
-		private int _bloodGroup;
+		private int _BloodGroup;
 		
-		private System.Nullable<int> _age;
+		private System.Nullable<int> _Age;
 		
-		private string _gender;
+		private string _Gender;
 		
-		private int _province;
+		private int _Province;
 		
-		private int _city;
+		private int _City;
 		
-		private System.Nullable<System.DateTime> _date;
+		private System.Nullable<System.DateTime> _Date;
 		
-		private int _bloodAvailable;
+		private int _BloodAvailable;
 		
 		private EntityRef<BloodGroup> _BloodGroup1;
 		
@@ -582,22 +582,22 @@ namespace BloodBank
     partial void OnIdChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
-    partial void OnphoneChanging(string value);
-    partial void OnphoneChanged();
-    partial void OnbloodGroupChanging(int value);
-    partial void OnbloodGroupChanged();
-    partial void OnageChanging(System.Nullable<int> value);
-    partial void OnageChanged();
-    partial void OngenderChanging(string value);
-    partial void OngenderChanged();
-    partial void OnprovinceChanging(int value);
-    partial void OnprovinceChanged();
-    partial void OncityChanging(int value);
-    partial void OncityChanged();
-    partial void OndateChanging(System.Nullable<System.DateTime> value);
-    partial void OndateChanged();
-    partial void OnbloodAvailableChanging(int value);
-    partial void OnbloodAvailableChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnBloodGroupChanging(int value);
+    partial void OnBloodGroupChanged();
+    partial void OnAgeChanging(System.Nullable<int> value);
+    partial void OnAgeChanged();
+    partial void OnGenderChanging(string value);
+    partial void OnGenderChanged();
+    partial void OnProvinceChanging(int value);
+    partial void OnProvinceChanged();
+    partial void OnCityChanging(int value);
+    partial void OnCityChanged();
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateChanged();
+    partial void OnBloodAvailableChanging(int value);
+    partial void OnBloodAvailableChanged();
     #endregion
 		
 		public Donor()
@@ -648,179 +648,179 @@ namespace BloodBank
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string phone
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Phone
 		{
 			get
 			{
-				return this._phone;
+				return this._Phone;
 			}
 			set
 			{
-				if ((this._phone != value))
+				if ((this._Phone != value))
 				{
-					this.OnphoneChanging(value);
+					this.OnPhoneChanging(value);
 					this.SendPropertyChanging();
-					this._phone = value;
-					this.SendPropertyChanged("phone");
-					this.OnphoneChanged();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bloodGroup", DbType="Int NOT NULL")]
-		public int bloodGroup
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BloodGroup", DbType="Int NOT NULL")]
+		public int BloodGroup
 		{
 			get
 			{
-				return this._bloodGroup;
+				return this._BloodGroup;
 			}
 			set
 			{
-				if ((this._bloodGroup != value))
+				if ((this._BloodGroup != value))
 				{
 					if (this._BloodGroup1.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnbloodGroupChanging(value);
+					this.OnBloodGroupChanging(value);
 					this.SendPropertyChanging();
-					this._bloodGroup = value;
-					this.SendPropertyChanged("bloodGroup");
-					this.OnbloodGroupChanged();
+					this._BloodGroup = value;
+					this.SendPropertyChanged("BloodGroup");
+					this.OnBloodGroupChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_age", DbType="Int")]
-		public System.Nullable<int> age
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Age", DbType="Int")]
+		public System.Nullable<int> Age
 		{
 			get
 			{
-				return this._age;
+				return this._Age;
 			}
 			set
 			{
-				if ((this._age != value))
+				if ((this._Age != value))
 				{
-					this.OnageChanging(value);
+					this.OnAgeChanging(value);
 					this.SendPropertyChanging();
-					this._age = value;
-					this.SendPropertyChanged("age");
-					this.OnageChanged();
+					this._Age = value;
+					this.SendPropertyChanged("Age");
+					this.OnAgeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender", DbType="VarChar(50)")]
-		public string gender
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="VarChar(50)")]
+		public string Gender
 		{
 			get
 			{
-				return this._gender;
+				return this._Gender;
 			}
 			set
 			{
-				if ((this._gender != value))
+				if ((this._Gender != value))
 				{
-					this.OngenderChanging(value);
+					this.OnGenderChanging(value);
 					this.SendPropertyChanging();
-					this._gender = value;
-					this.SendPropertyChanged("gender");
-					this.OngenderChanged();
+					this._Gender = value;
+					this.SendPropertyChanged("Gender");
+					this.OnGenderChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_province", DbType="Int NOT NULL")]
-		public int province
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Province", DbType="Int NOT NULL")]
+		public int Province
 		{
 			get
 			{
-				return this._province;
+				return this._Province;
 			}
 			set
 			{
-				if ((this._province != value))
+				if ((this._Province != value))
 				{
 					if (this._Province1.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnprovinceChanging(value);
+					this.OnProvinceChanging(value);
 					this.SendPropertyChanging();
-					this._province = value;
-					this.SendPropertyChanged("province");
-					this.OnprovinceChanged();
+					this._Province = value;
+					this.SendPropertyChanged("Province");
+					this.OnProvinceChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_city", DbType="Int NOT NULL")]
-		public int city
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="Int NOT NULL")]
+		public int City
 		{
 			get
 			{
-				return this._city;
+				return this._City;
 			}
 			set
 			{
-				if ((this._city != value))
+				if ((this._City != value))
 				{
 					if (this._City1.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OncityChanging(value);
+					this.OnCityChanging(value);
 					this.SendPropertyChanging();
-					this._city = value;
-					this.SendPropertyChanged("city");
-					this.OncityChanged();
+					this._City = value;
+					this.SendPropertyChanged("City");
+					this.OnCityChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date")]
-		public System.Nullable<System.DateTime> date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> Date
 		{
 			get
 			{
-				return this._date;
+				return this._Date;
 			}
 			set
 			{
-				if ((this._date != value))
+				if ((this._Date != value))
 				{
-					this.OndateChanging(value);
+					this.OnDateChanging(value);
 					this.SendPropertyChanging();
-					this._date = value;
-					this.SendPropertyChanged("date");
-					this.OndateChanged();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bloodAvailable", DbType="Int NOT NULL")]
-		public int bloodAvailable
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BloodAvailable", DbType="Int NOT NULL")]
+		public int BloodAvailable
 		{
 			get
 			{
-				return this._bloodAvailable;
+				return this._BloodAvailable;
 			}
 			set
 			{
-				if ((this._bloodAvailable != value))
+				if ((this._BloodAvailable != value))
 				{
-					this.OnbloodAvailableChanging(value);
+					this.OnBloodAvailableChanging(value);
 					this.SendPropertyChanging();
-					this._bloodAvailable = value;
-					this.SendPropertyChanged("bloodAvailable");
-					this.OnbloodAvailableChanged();
+					this._BloodAvailable = value;
+					this.SendPropertyChanged("BloodAvailable");
+					this.OnBloodAvailableChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BloodGroup_Donor", Storage="_BloodGroup1", ThisKey="bloodGroup", OtherKey="Id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BloodGroup_Donor", Storage="_BloodGroup1", ThisKey="BloodGroup", OtherKey="Id", IsForeignKey=true)]
 		public BloodGroup BloodGroup1
 		{
 			get
@@ -843,18 +843,18 @@ namespace BloodBank
 					if ((value != null))
 					{
 						value.Donors.Add(this);
-						this._bloodGroup = value.Id;
+						this._BloodGroup = value.Id;
 					}
 					else
 					{
-						this._bloodGroup = default(int);
+						this._BloodGroup = default(int);
 					}
 					this.SendPropertyChanged("BloodGroup1");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Province_Donor", Storage="_Province1", ThisKey="province", OtherKey="Id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Province_Donor", Storage="_Province1", ThisKey="Province", OtherKey="Id", IsForeignKey=true)]
 		public Province Province1
 		{
 			get
@@ -877,18 +877,18 @@ namespace BloodBank
 					if ((value != null))
 					{
 						value.Donors.Add(this);
-						this._province = value.Id;
+						this._Province = value.Id;
 					}
 					else
 					{
-						this._province = default(int);
+						this._Province = default(int);
 					}
 					this.SendPropertyChanged("Province1");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_Donor", Storage="_City1", ThisKey="city", OtherKey="Id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="City_Donor", Storage="_City1", ThisKey="City", OtherKey="Id", IsForeignKey=true)]
 		public City City1
 		{
 			get
@@ -911,11 +911,11 @@ namespace BloodBank
 					if ((value != null))
 					{
 						value.Donors.Add(this);
-						this._city = value.Id;
+						this._City = value.Id;
 					}
 					else
 					{
-						this._city = default(int);
+						this._City = default(int);
 					}
 					this.SendPropertyChanged("City1");
 				}

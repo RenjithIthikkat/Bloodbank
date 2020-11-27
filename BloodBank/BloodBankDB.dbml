@@ -4,7 +4,7 @@
     <Type Name="BloodGroup">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="BloodGroup_Donor" Member="Donors" ThisKey="Id" OtherKey="bloodGroup" Type="Donor" />
+      <Association Name="BloodGroup_Donor" Member="Donors" ThisKey="Id" OtherKey="BloodGroup" Type="Donor" />
     </Type>
   </Table>
   <Table Name="dbo.Province" Member="Provinces">
@@ -12,7 +12,7 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ProvinceName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="Province_City" Member="Cities" ThisKey="Id" OtherKey="Province" Type="City" />
-      <Association Name="Province_Donor" Member="Donors" ThisKey="Id" OtherKey="province" Type="Donor" />
+      <Association Name="Province_Donor" Member="Donors" ThisKey="Id" OtherKey="Province" Type="Donor" />
     </Type>
   </Table>
   <Table Name="dbo.City" Member="Cities">
@@ -20,7 +20,7 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="CityName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Province" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="City_Donor" Member="Donors" ThisKey="Id" OtherKey="city" Type="Donor" />
+      <Association Name="City_Donor" Member="Donors" ThisKey="Id" OtherKey="City" Type="Donor" />
       <Association Name="Province_City" Member="Province1" ThisKey="Province" OtherKey="Id" Type="Province" IsForeignKey="true" />
     </Type>
   </Table>
@@ -28,17 +28,17 @@
     <Type Name="Donor">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="phone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="bloodGroup" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="province" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="city" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="bloodAvailable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="BloodGroup_Donor" Member="BloodGroup1" ThisKey="bloodGroup" OtherKey="Id" Type="BloodGroup" IsForeignKey="true" />
-      <Association Name="Province_Donor" Member="Province1" ThisKey="province" OtherKey="Id" Type="Province" IsForeignKey="true" />
-      <Association Name="City_Donor" Member="City1" ThisKey="city" OtherKey="Id" Type="City" IsForeignKey="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BloodGroup" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Province" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BloodAvailable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="BloodGroup_Donor" Member="BloodGroup1" ThisKey="BloodGroup" OtherKey="Id" Type="BloodGroup" IsForeignKey="true" />
+      <Association Name="Province_Donor" Member="Province1" ThisKey="Province" OtherKey="Id" Type="Province" IsForeignKey="true" />
+      <Association Name="City_Donor" Member="City1" ThisKey="City" OtherKey="Id" Type="City" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

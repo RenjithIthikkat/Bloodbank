@@ -26,6 +26,7 @@ namespace BloodBank
             dc = new BloodBankDBDataContext();
 
             DonorsDataGrid.ItemsSource = dc.Donors;
+
         }
 
 
