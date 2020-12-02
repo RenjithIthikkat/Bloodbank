@@ -7,9 +7,38 @@
         mc:Ignorable="d"
         Title="Donors" Height="650" Width="1000">
     <Grid>
-        <ComboBox Name="FilterComboBx" HorizontalAlignment="Left" Margin="236,10,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="FilterTextBox" HorizontalAlignment="Left" Height="23" Margin="380,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <DataGrid x:Name="DonorsDataGrid" HorizontalAlignment="Left" Height="555" Margin="0,50,0,0" VerticalAlignment="Top" Width="992"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="50" Margin="10,0,0,10" VerticalAlignment="Top">
+            <Label VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center" Content="Filter By" FontWeight="Bold"/>
+            <ComboBox x:Name="ComboBoxFilterBy" Width="150" VerticalContentAlignment="Center" Margin="0,10">
+                <ComboBoxItem Content="Name" />
+                <ComboBoxItem Content="Phone" />
+                <ComboBoxItem Content="BloodGroup" />
+                <ComboBoxItem Content="City" />
+                <ComboBoxItem Content="Province" />
+            </ComboBox>
+
+            <Label Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center" Content="Filter Text" FontWeight="Bold"/>
+            <TextBox x:Name="TextBoxFilter" Width="150" Height="30" VerticalContentAlignment="Center"></TextBox>
+
+            <CheckBox x:Name="CheckBoxBloodAvailable" Content="Blood Available" VerticalAlignment="Center" Margin="15,10,0,10"/>
+
+            <Button x:Name="ButtonFilter" Content="Apply" Width="75" Margin="20,10,0,10" Click="ButtonFilter_Click"/>
+            <Button x:Name="ButtonFilterClear" Content="Clear" Width="75" Margin="10,10,0,10" Click="ButtonFilterClear_Click"/>
+        </StackPanel>
+
+        <DataGrid x:Name="DonorsDataGrid" HorizontalAlignment="Left" Height="555" Margin="0,50,0,0" VerticalAlignment="Top" Width="992" >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn x:Name="EditColumn" Header="" Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Edit" Background="Transparent" BorderThickness="0" Click="EditDonor_Click" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

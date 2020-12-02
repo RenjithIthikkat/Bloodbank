@@ -41,4 +41,12 @@
       <Association Name="City_Donor" Member="City1" ThisKey="City" OtherKey="Id" Type="City" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Credential" Member="Credentials">
+    <Type Name="Credential">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

@@ -6,10 +6,20 @@
         xmlns:local="clr-namespace:BloodBank"
         mc:Ignorable="d"
         Title="Blood Bank" Height="650" Width="1000">
-    <Grid>
-        <Label Content="Blood Bank" FontSize="40" HorizontalAlignment="Left" Margin="40,20,0,0" VerticalAlignment="Top"/>
-        <Label Content="Login" FontSize="25" HorizontalAlignment="Left" Margin="40,80,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="LoginBtn" Content="Login" HorizontalAlignment="Left" Margin="40,291,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="LoginBtn_Click"/>
+    <StackPanel Margin="20">
+        <Label Content="Blood Bank" Foreground="White" Background="Blue" FontSize="50" HorizontalAlignment="Center" Width="954" Margin="0,0,-0.4,0" />
+        <TextBlock Text="Welcome Back" Foreground="Blue" Height="60" FontSize="35" Width="240" Margin="0,20,-0.4,0">
+        </TextBlock>
 
-    </Grid>
+        <Label Content="Username" FontSize="25" Margin="164,50,189.6,0" Height="45"/>
+
+        <TextBox x:Name="txtUsername"  FontSize="18" Height="45" Width="600" Margin="155,10,180.6,0" />
+
+
+        <Label Content="Password" FontSize="25" Height="45" Margin="164,30,189.6,0" />
+        <TextBox x:Name="txtPassword" FontSize="18" Height="45" Margin="164,10,189.6,0" />
+
+
+        <Button x:Name="btnSubmit" Background="LightSkyBlue" Click ="LoginBtn_Click" Content="Login" FontSize="25" Height="45" Width="250" Margin="351,30,351,0" />
+    </StackPanel>
 </Window>

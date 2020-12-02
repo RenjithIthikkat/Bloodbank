@@ -2,57 +2,63 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BloodBankDB">
   <DataContextMoniker Name="/BloodBankDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="360db935-24e0-4e8b-a9b1-fbcdc1f426c1" absoluteBounds="4.875, 0.75, 2, 1.1939925130208333">
+    <classShape Id="360db935-24e0-4e8b-a9b1-fbcdc1f426c1" absoluteBounds="5.125, 0.875, 2, 1.1939925130208333">
       <DataClassMoniker Name="/BloodBankDBDataContext/BloodGroup" />
       <nestedChildShapes>
-        <elementListCompartment Id="62f8e4ee-2693-4c61-81df-6b1ef62cd25b" absoluteBounds="4.89, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="62f8e4ee-2693-4c61-81df-6b1ef62cd25b" absoluteBounds="5.14, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a13b9ce8-431f-4561-bc11-e229822c2865" absoluteBounds="4.875, 2.5, 2, 1.1939925130208333">
+    <classShape Id="a13b9ce8-431f-4561-bc11-e229822c2865" absoluteBounds="5.125, 2.5, 2, 1.1939925130208333">
       <DataClassMoniker Name="/BloodBankDBDataContext/Province" />
       <nestedChildShapes>
-        <elementListCompartment Id="efcfd3b7-fc4c-4461-91e7-c880304a7f00" absoluteBounds="4.89, 2.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="efcfd3b7-fc4c-4461-91e7-c880304a7f00" absoluteBounds="5.14, 2.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1b7aa2f3-8d62-4d63-a811-4a7c7125d506" absoluteBounds="4.875, 4.25, 2, 1.3862939453125">
+    <classShape Id="1b7aa2f3-8d62-4d63-a811-4a7c7125d506" absoluteBounds="5.125, 4.25, 2, 1.3862939453125">
       <DataClassMoniker Name="/BloodBankDBDataContext/City" />
       <nestedChildShapes>
-        <elementListCompartment Id="637c3f3a-bb5e-44ad-aeb9-bf3c8c33c286" absoluteBounds="4.89, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="637c3f3a-bb5e-44ad-aeb9-bf3c8c33c286" absoluteBounds="5.14, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.21875 : 3.69399251302083); (6.21875 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.125 : 3.69399251302083); (6.125 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BloodBankDBDataContext/Province/Province_City" />
       <nodes>
         <classShapeMoniker Id="a13b9ce8-431f-4561-bc11-e229822c2865" />
         <classShapeMoniker Id="1b7aa2f3-8d62-4d63-a811-4a7c7125d506" />
       </nodes>
     </associationConnector>
-    <classShape Id="ba31294c-d81e-499c-ab3c-8e9626627f06" absoluteBounds="2.375, 1.625, 2, 2.7324039713541666">
+    <classShape Id="ba31294c-d81e-499c-ab3c-8e9626627f06" absoluteBounds="2.75, 1.625, 2, 2.7324039713541666">
       <DataClassMoniker Name="/BloodBankDBDataContext/Donor" />
       <nestedChildShapes>
-        <elementListCompartment Id="3f411b6a-7ec2-4b2c-ad10-c320878db74b" absoluteBounds="2.39, 2.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3f411b6a-7ec2-4b2c-ad10-c320878db74b" absoluteBounds="2.765, 2.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.875 : 1.1874995); (3.375 : 1.1874995); (3.375 : 1.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.125 : 1.84699625651042); (4.75 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BloodBankDBDataContext/BloodGroup/BloodGroup_Donor" />
       <nodes>
         <classShapeMoniker Id="360db935-24e0-4e8b-a9b1-fbcdc1f426c1" />
         <classShapeMoniker Id="ba31294c-d81e-499c-ab3c-8e9626627f06" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.875 : 3.09699625651042); (4.375 : 3.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.125 : 3.09699625651042); (4.75 : 3.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BloodBankDBDataContext/Province/Province_Donor" />
       <nodes>
         <classShapeMoniker Id="a13b9ce8-431f-4561-bc11-e229822c2865" />
         <classShapeMoniker Id="ba31294c-d81e-499c-ab3c-8e9626627f06" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.875 : 4.94314697265625); (3.375 : 4.94314697265625); (3.375 : 4.35740397135417)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.125 : 4.94314697265625); (3.75 : 4.94314697265625); (3.75 : 4.35740397135417)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/BloodBankDBDataContext/City/City_Donor" />
       <nodes>
         <classShapeMoniker Id="1b7aa2f3-8d62-4d63-a811-4a7c7125d506" />
         <classShapeMoniker Id="ba31294c-d81e-499c-ab3c-8e9626627f06" />
       </nodes>
     </associationConnector>
+    <classShape Id="e6192d7c-9daa-4532-b1c9-bd1e74ff7d8f" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BloodBankDBDataContext/Credential" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e2727cd-975c-41f5-bcba-4b995b2ae7c9" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

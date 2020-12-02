@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Linq;
 
 namespace BloodBank
 {
@@ -24,13 +25,54 @@ namespace BloodBank
         {
             InitializeComponent();
 
-            BloodBankDBDataContext dc = new BloodBankDBDataContext();
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            AdminDashboard adminDashboard = new AdminDashboard();
-            adminDashboard.Show();
+            if (isValidAdmin(txtUsername.Text, txtPassword.Text))
+            {
+                AdminDashboard adminDashboard = new AdminDashboard();
+                adminDashboard.Show();
+
+            }
+            else if (isValidHospital(txtUsername.Text, txtPassword.Text))
+            {
+                Window1 searchBloodGroup = new Window1();
+                searchBloodGroup.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Credentials", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+
+        private bool isValidHospital(string username, string password)
+        {
+            BloodBankDBDataContext dc = new BloodBankDBDataContext();
+            var q = from p in dc.Credentials where p.Username == username && p.Password == password && p.Type == "hospital" select p;
+            if (q.Any())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool isValidAdmin(string username, string password)
+        {
+            BloodBankDBDataContext dc = new BloodBankDBDataContext();
+            var q = from p in dc.Credentials where p.Username == username && p.Password == password && p.Type == "admin" select p;
+            if (q.Any())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

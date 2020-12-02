@@ -76,10 +76,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BloodBankDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="EditDonor.xaml.cs">
+      <DependentUpon>EditDonor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JavaScriptSerializer.cs" />
+    <Compile Include="SearchByBloodGroup.xaml.cs">
+      <DependentUpon>SearchByBloodGroup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewDonors.xaml.cs">
       <DependentUpon>ViewDonors.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditDonor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,6 +109,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SearchByBloodGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewDonors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
