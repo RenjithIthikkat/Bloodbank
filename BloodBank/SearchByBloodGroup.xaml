@@ -1,23 +1,43 @@
-﻿<Window x:Class="BloodBank.Window1"
+﻿<Window x:Class="BloodBank.SearchByBloodGroup"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BloodBank"
         mc:Ignorable="d"
-        Title="Window1" Height="511.29" Width="800">
-    <StackPanel Margin="2">
-        <Label Content="Blood Bank" Foreground="White" Background="Blue" FontSize="40" HorizontalAlignment="Center" Height="60" Width="784" />
-        <Label Content="Search Blood Group Availability Here" FontSize="25" Foreground="Blue" Margin="164,5,163.6,0" Height="45" HorizontalAlignment="Center" Width="426"/>
-        <RadioButton GroupName="True" IsChecked="True" Name="Ap" Content="A+" Margin="155,10,180.6,0" FontSize="18" />
-        <RadioButton GroupName="True" Name="Bp" Content="B+" Margin="155,10,180.6,0" FontSize="18" />
-        <RadioButton GroupName="True" Name="An" Content="A-" Margin="155,10,180.6,0" FontSize="18"/>
-        <RadioButton GroupName="True" Name="Bn" Content="B-" Margin="155,10,180.6,0" FontSize="18"/>
-        <RadioButton GroupName="True" Name="ABp" Content="AB+" Margin="155,10,180.6,0" FontSize="18"/>
-        <RadioButton GroupName="True" Name="ABn" Content="AB-" Margin="155,10,180.6,0" FontSize="18"/>
-        <RadioButton GroupName="True" Name="Op" Content="O+" Margin="155,10,180.6,0" FontSize="18"/>
-        <RadioButton GroupName="True" Name="On" Content="O-" Margin="155,10,180.6,0" FontSize="18"/>
-        <Button Content="Search" Height="36" Click="Button_Click" HorizontalAlignment="Center" Width="70" Margin="5" Background="LightSkyBlue"/>
-        <TextBox TextWrapping="Wrap" Name="resultBox" Height="40" Text="" HorizontalAlignment="Center" Width="500" BorderThickness="0" Foreground="Blue"/>
+        Title="Window1" Height="580.135" Width="800" Left="50" Top="50">
+    <StackPanel Margin="2,2,1.6,10.4">
+        <Label Content="Blood Bank" Foreground="White" Background="#FFF70909" FontSize="40" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="63" Width="800" />
+        <Button x:Name="LogoutButton" Content="Logout" Click="Button_Click_1" Foreground="CornflowerBlue" Background="White" HorizontalAlignment="Right" Width="60" FontSize="15" Margin="0,10,10,0"/>
+        <Label Content="Request Blood Group" FontSize="20" Margin="0,15,0,0" Height="45" HorizontalAlignment="Center" FontFamily="Verdana" FontWeight="DemiBold" Foreground="#FFF3F1F1" Background="#FFFC0D0D"/>
+        <ComboBox x:Name="BloodGroup" Background="White" Width="180" Padding="10" VerticalContentAlignment="Center" Margin="0,16">
+            <ComboBoxItem Content="--- Choose Blood Group ---" IsSelected="True"></ComboBoxItem>
+            <ComboBoxItem Content="A+"></ComboBoxItem>
+            <ComboBoxItem Content="A-"></ComboBoxItem>
+            <ComboBoxItem Content="B+"></ComboBoxItem>
+            <ComboBoxItem Content="B-"></ComboBoxItem>
+            <ComboBoxItem Content="AB+"></ComboBoxItem>
+            <ComboBoxItem Content="AB-"></ComboBoxItem>
+            <ComboBoxItem Content="O+"></ComboBoxItem>
+            <ComboBoxItem Content="O-"></ComboBoxItem>
+
+        </ComboBox>
+        <Button x:Name="Request" Content="Search" Click="Button_Click" HorizontalAlignment="Center" Width="100" Margin="5"  FontFamily="Verdana" FontWeight="DemiBold" Background="#FFF04314" Foreground="#FFF4C7C4" FontSize="14" Padding="10" />
+        <TextBox Name="resultBox" FontSize="20" Text="" HorizontalAlignment="Center" BorderThickness="0" Margin="20" Foreground="Blue"/>
+        <DataGrid x:Name="DonorsDataGridPending" HorizontalAlignment="Center"  Width="741" Margin="30,65,19.4,0" Height="203" Background="#FFF61414" Foreground="#FFF7E6E6" >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn x:Name="EditColumn1" Header="" Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Label Name="ContactLabel" Content="Contact Blood Bank: +1 226-123-1234" HorizontalAlignment="Center" Visibility="Hidden" FontFamily="Verdana" FontWeight="Medium" Foreground="CornflowerBlue" FontSize="14"/>
+
     </StackPanel>
 </Window>

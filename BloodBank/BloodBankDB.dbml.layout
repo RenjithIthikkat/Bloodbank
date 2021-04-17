@@ -1,63 +1,75 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BloodBankDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.625" name="BloodBankDB">
   <DataContextMoniker Name="/BloodBankDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="360db935-24e0-4e8b-a9b1-fbcdc1f426c1" absoluteBounds="5.125, 0.875, 2, 1.1939925130208333">
+    <classShape Id="a311ae69-93dd-46a7-b689-ee68ffa6a5a2" absoluteBounds="3.5, 5.75, 2, 1.1939925130208344">
       <DataClassMoniker Name="/BloodBankDBDataContext/BloodGroup" />
       <nestedChildShapes>
-        <elementListCompartment Id="62f8e4ee-2693-4c61-81df-6b1ef62cd25b" absoluteBounds="5.14, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="eef4b660-e8fe-4db3-937e-45f6b89248bc" absoluteBounds="3.515, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a13b9ce8-431f-4561-bc11-e229822c2865" absoluteBounds="5.125, 2.5, 2, 1.1939925130208333">
+    <classShape Id="3f6a8f8b-20e1-472a-8b18-bdbfeff27edb" absoluteBounds="0.75, 1.75, 2, 1.1939925130208335">
       <DataClassMoniker Name="/BloodBankDBDataContext/Province" />
       <nestedChildShapes>
-        <elementListCompartment Id="efcfd3b7-fc4c-4461-91e7-c880304a7f00" absoluteBounds="5.14, 2.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3e97c1b4-0a58-41ef-a23d-e1965fff031a" absoluteBounds="0.765, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1b7aa2f3-8d62-4d63-a811-4a7c7125d506" absoluteBounds="5.125, 4.25, 2, 1.3862939453125">
+    <classShape Id="0e6c5f68-0402-42ae-ad46-49da6974968e" absoluteBounds="3.5, 1.625, 2, 1.3862939453124998">
       <DataClassMoniker Name="/BloodBankDBDataContext/City" />
       <nestedChildShapes>
-        <elementListCompartment Id="637c3f3a-bb5e-44ad-aeb9-bf3c8c33c286" absoluteBounds="5.14, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4ebf4ef5-3a74-43aa-8407-077ef0cd8a05" absoluteBounds="3.515, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.125 : 3.69399251302083); (6.125 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/BloodBankDBDataContext/Province/Province_City" />
-      <nodes>
-        <classShapeMoniker Id="a13b9ce8-431f-4561-bc11-e229822c2865" />
-        <classShapeMoniker Id="1b7aa2f3-8d62-4d63-a811-4a7c7125d506" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="ba31294c-d81e-499c-ab3c-8e9626627f06" absoluteBounds="2.75, 1.625, 2, 2.7324039713541666">
+    <classShape Id="f71df419-aa07-4479-a17f-21786a59afdc" absoluteBounds="6.25, 1, 2, 2.7324039713541666">
       <DataClassMoniker Name="/BloodBankDBDataContext/Donor" />
       <nestedChildShapes>
-        <elementListCompartment Id="3f411b6a-7ec2-4b2c-ad10-c320878db74b" absoluteBounds="2.765, 2.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="10fddaa6-d523-41bf-a8e6-4375c60474e3" absoluteBounds="6.265, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.125 : 1.84699625651042); (4.75 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.34699625651042); (3.5 : 2.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BloodBankDBDataContext/Province/Province_City" />
+      <nodes>
+        <classShapeMoniker Id="3f6a8f8b-20e1-472a-8b18-bdbfeff27edb" />
+        <classShapeMoniker Id="0e6c5f68-0402-42ae-ad46-49da6974968e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.75); (5.875 : 5.375); (5.875 : 2.17029747916667); (6.25 : 2.17029747916667)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/BloodBankDBDataContext/BloodGroup/BloodGroup_Donor" />
       <nodes>
-        <classShapeMoniker Id="360db935-24e0-4e8b-a9b1-fbcdc1f426c1" />
-        <classShapeMoniker Id="ba31294c-d81e-499c-ab3c-8e9626627f06" />
+        <classShapeMoniker Id="a311ae69-93dd-46a7-b689-ee68ffa6a5a2" />
+        <classShapeMoniker Id="f71df419-aa07-4479-a17f-21786a59afdc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.125 : 3.09699625651042); (4.75 : 3.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 2.94399251302083); (1.75 : 3.40309895833333); (5.79166666666667 : 3.40309895833333 : JumpStart); (5.95833333333333 : 3.40309895833333 : JumpEnd); (6.25 : 3.40309895833333)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BloodBankDBDataContext/Province/Province_Donor" />
       <nodes>
-        <classShapeMoniker Id="a13b9ce8-431f-4561-bc11-e229822c2865" />
-        <classShapeMoniker Id="ba31294c-d81e-499c-ab3c-8e9626627f06" />
+        <classShapeMoniker Id="3f6a8f8b-20e1-472a-8b18-bdbfeff27edb" />
+        <classShapeMoniker Id="f71df419-aa07-4479-a17f-21786a59afdc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.125 : 4.94314697265625); (3.75 : 4.94314697265625); (3.75 : 4.35740397135417)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 2.31814697265625); (5.79166666666667 : 2.31814697265625 : JumpStart); (5.95833333333333 : 2.31814697265625 : JumpEnd); (6.25 : 2.31814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/BloodBankDBDataContext/City/City_Donor" />
       <nodes>
-        <classShapeMoniker Id="1b7aa2f3-8d62-4d63-a811-4a7c7125d506" />
-        <classShapeMoniker Id="ba31294c-d81e-499c-ab3c-8e9626627f06" />
+        <classShapeMoniker Id="0e6c5f68-0402-42ae-ad46-49da6974968e" />
+        <classShapeMoniker Id="f71df419-aa07-4479-a17f-21786a59afdc" />
       </nodes>
     </associationConnector>
-    <classShape Id="e6192d7c-9daa-4532-b1c9-bd1e74ff7d8f" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
+    <classShape Id="ce8d1233-c26a-4a18-a584-abeee6faee41" absoluteBounds="1.25, 4.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/BloodBankDBDataContext/UserType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d36b12ae-0800-46bc-8cda-ee33d0e5cb71" absoluteBounds="1.2650000000000001, 4.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cd204c70-bfbb-4fd7-b738-712df682c747" absoluteBounds="1.5, 7.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/BloodBankDBDataContext/BloodRequest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95479ec3-832d-4554-ad50-e2ed03471fd2" absoluteBounds="1.5150000000000001, 7.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="63a57f0f-cdaa-47ae-b1a9-20251a68f034" absoluteBounds="7.5, 5.625, 2, 1.7708968098958331">
       <DataClassMoniker Name="/BloodBankDBDataContext/Credential" />
       <nestedChildShapes>
-        <elementListCompartment Id="0e2727cd-975c-41f5-bcba-4b995b2ae7c9" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bbcc29ea-0a4f-457c-aa2d-4fad0b9225fc" absoluteBounds="7.515, 6.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

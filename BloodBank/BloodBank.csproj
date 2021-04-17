@@ -50,7 +50,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml" />
@@ -71,13 +73,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddDonor.xaml.cs">
-      <DependentUpon>AddDonor.xaml</DependentUpon>
+    <Compile Include="AddNewDonor.xaml.cs">
+      <DependentUpon>AddNewDonor.xaml</DependentUpon>
     </Compile>
     <Compile Include="BloodBankDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BloodBankDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DonorDetail.cs" />
+    <Compile Include="AppointmentApproval.xaml.cs">
+      <DependentUpon>AppointmentApproval.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RequestApproval.xaml.cs">
+      <DependentUpon>RequestApproval.xaml</DependentUpon>
     </Compile>
     <Compile Include="EditDonor.xaml.cs">
       <DependentUpon>EditDonor.xaml</DependentUpon>
@@ -86,16 +95,31 @@
     <Compile Include="SearchByBloodGroup.xaml.cs">
       <DependentUpon>SearchByBloodGroup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SearchHelper.cs" />
+    <Compile Include="RequestList.xaml.cs">
+      <DependentUpon>RequestList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment.xaml.cs">
+      <DependentUpon>Appointment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewDonors.xaml.cs">
       <DependentUpon>ViewDonors.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddDonor.xaml">
+    <Page Include="AddNewDonor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminDashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppointmentApproval.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RequestApproval.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="EditDonor.xaml">
       <SubType>Designer</SubType>
@@ -119,6 +143,14 @@
     <Page Include="SearchByBloodGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RequestList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Appointment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewDonors.xaml">
       <SubType>Designer</SubType>

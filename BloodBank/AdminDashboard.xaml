@@ -5,7 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BloodBank"
         mc:Ignorable="d"
-        Title="Admin Dashboard" Height="650" Width="1000">
+        Title="Admin Dashboard" Height="650" Width="850" Left="50" Top="50">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle">
+            <Setter Property="FrameworkElement.Width" Value="120"/>
+            <Setter Property="Control.FontFamily" Value="Verdana"/>
+            <Setter Property="Control.FontSize" Value="18"/>
+            <Setter Property="Control.FontWeight" Value="SemiBold"/>
+            <Setter Property="Control.Foreground" Value="White"/>
+            <Setter Property="Control.Background" Value="CornflowerBlue"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.Resources>
             <Style x:Key="LabelStyle">
@@ -15,21 +25,24 @@
                 <Setter Property="Label.Foreground" Value="CornflowerBlue"/>
             </Style>
             <Style x:Key="ButtonStyle">
-                <Setter Property="Button.Height" Value="25"/>
                 <Setter Property="Button.Width" Value="120"/>
                 <Setter Property="Button.FontFamily" Value="Verdana"/>
-                <Setter Property="Button.FontSize" Value="25"/>
-                <Setter Property="Button.FontWeight" Value="Bold"/>
+                <Setter Property="Button.FontSize" Value="18"/>
+                <Setter Property="Button.FontWeight" Value="SemiBold"/>
                 <Setter Property="Button.Foreground" Value="White"/>
                 <Setter Property="Button.Background" Value="CornflowerBlue"/>
             </Style>
         </Grid.Resources>
 
-        <Rectangle Fill="CornflowerBlue" HorizontalAlignment="Left" Height="619" Stroke="Black" VerticalAlignment="Top" Width="992"/>
-        <Rectangle Fill="GhostWhite" HorizontalAlignment="Left" Height="472" Margin="84,65,0,0" Stroke="Black" VerticalAlignment="Top" Width="834"/>
-        <Image HorizontalAlignment="Left" Height="276" Margin="86,179,0,0" VerticalAlignment="Top" Width="382" Source="../Login.png"/>
-        <Rectangle Fill="GhostWhite" HorizontalAlignment="Left" Height="100" Margin="86,68,0,0" Stroke="White" VerticalAlignment="Top" Width="830"/>
-        <Label Content="Blood Bank" Style="{StaticResource LabelStyle}" HorizontalAlignment="Center" Margin="370,87,342,0" VerticalAlignment="Top" FontSize="40" Width="280"/>
-        
+        <Rectangle Fill="#FFED1D0C" HorizontalAlignment="Left" Height="619" Stroke="Black" VerticalAlignment="Top" Width="852"/>
+        <Rectangle Fill="GhostWhite" HorizontalAlignment="Center" Height="472" Margin="0,65,0,0" Stroke="Black" VerticalAlignment="Top" Width="750"/>
+        <Label Content="Blood Bank" Style="{StaticResource LabelStyle}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,87,0,0" VerticalAlignment="Top" FontSize="40" Width="700" Background="#FFE73939" Foreground="#FFED9A64"/>
+
+        <Button x:Name="AddDonorBtn" Content="Add Donors" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Margin="272,174,271.2,0" VerticalAlignment="Top" Width="300" Padding="10" Click="AddDonorsButton_Click" Background="#FFDA3700"/>
+        <Button x:Name="ViewDonorsBtn" Content="View Donors" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Margin="272,245,271.2,0" VerticalAlignment="Top" Width="300" Padding="10" Click="ViewDonorsButton_Click" Background="#FFF04618"/>
+        <Button x:Name="SearchBGBtn" Content="Blood request List" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Margin="272,318,271.2,0" VerticalAlignment="Top" Width="300" Padding="10" Click="SearchByBloodGroupsButton_Click" Background="#FFEE360E"/>
+        <Button x:Name="LogoutBtn" Content="Logout" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Margin="272,463,271.2,0" VerticalAlignment="Top" Width="300" Padding="10" Click="LogoutButton_Click" Background="#FFEE4E0E"/>
+        <Button x:Name="btn_Appointment" Content="Appointment" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Margin="272,394,271.2,0" VerticalAlignment="Top" Width="300" Padding="10" Click="btn_Appointmnet_Click" Background="#FFEE360E"/>
+
     </Grid>
 </Window>

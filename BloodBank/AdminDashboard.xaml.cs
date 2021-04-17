@@ -1,47 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
+﻿using System.Windows;
+//Admin Dashboard
 namespace BloodBank
-{
-    /// <summary>
-    /// Interaction logic for AdminDashboard.xaml
-    /// </summary>
+{   
     public partial class AdminDashboard : Window
     {
-        public AdminDashboard()
+        private string user;
+        public AdminDashboard(string username)
         {
+            user = username;
             InitializeComponent();
         }
-
-        private void ViewDonorsBtn_Click(object sender, RoutedEventArgs e)
+        //Redirecting to Add New Donors page
+        private void AddDonorsButton_Click(object sender, RoutedEventArgs e)
         {
+            AddDonorBtn.Focusable = false;
+            AddNewDonor addNewDonor = new AddNewDonor();
+            addNewDonor.ShowDialog();
+        }
+
+        //Redirecting to View New Donors page
+        private void ViewDonorsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewDonorsBtn.Focusable = false;
             ViewDonors viewDonors = new ViewDonors();
             viewDonors.ShowDialog();
+        }        
+        private void SearchByBloodGroupsButton_Click(object sender, RoutedEventArgs e)
+        {
+            SearchBGBtn.Focusable = false;           
+            RequestList requestList = new RequestList();
+            requestList.ShowDialog();
         }
 
-        private void AddDonorBtn_Click(object sender, RoutedEventArgs e)
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow main = new MainWindow();
+            main.Show();
+            Close();
         }
 
-        private void SearchBloodBtn_Click(object sender, RoutedEventArgs e)
+        private void btn_Appointmnet_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
+            btn_Appointment.Focusable = false;          
+            Appointment appointment = new Appointment();
+            appointment.ShowDialog();
 
         }
     }

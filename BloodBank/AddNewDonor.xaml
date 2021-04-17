@@ -1,0 +1,80 @@
+﻿<Window x:Class="BloodBank.AddNewDonor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BloodBank"
+        mc:Ignorable="d"
+        Title="AddDonorDetails" Height="500" Width="800" Left="50" Top="50">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle">
+            <Setter Property="FrameworkElement.Height" Value="35"/>
+            <Setter Property="FrameworkElement.Width" Value="120"/>
+            <Setter Property="Control.FontFamily" Value="Verdana"/>
+            <Setter Property="Control.FontSize" Value="14"/>
+            <Setter Property="Control.FontWeight" Value="ExtraBold"/>
+            <Setter Property="Control.Foreground" Value="White"/>
+            <Setter Property="Control.Background" Value="CornflowerBlue"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="LabelStyle">
+                <Setter Property="Label.FontFamily" Value="Verdana"/>
+                <Setter Property="Label.FontSize" Value="14"/>
+                <Setter Property="Label.FontWeight" Value="DemiBold"/>
+                <Setter Property="Label.Foreground" Value="CornflowerBlue"/>
+            </Style>
+            <Style x:Key="ButtonStyle">
+                <Setter Property="Button.Height" Value="35"/>
+                <Setter Property="Button.Width" Value="120"/>
+                <Setter Property="Button.FontFamily" Value="Verdana"/>
+                <Setter Property="Button.FontSize" Value="14"/>
+                <Setter Property="Button.FontWeight" Value="ExtraBold"/>
+                <Setter Property="Button.Foreground" Value="White"/>
+                <Setter Property="Button.Background" Value="CornflowerBlue"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="88*"/>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="663*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Add New Donor" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="26,71,0,0" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="3"/>
+        <Rectangle Fill="CornflowerBlue" HorizontalAlignment="Left" Height="63" Stroke="Black" VerticalAlignment="Top" Width="792" Grid.ColumnSpan="3"/>
+        <Label Content="Blood Bank" Foreground="White" HorizontalAlignment="Left" Margin="155,0,0,0" VerticalAlignment="Top" FontSize="40" Grid.Column="2"/>
+
+        <Label Content="Name :" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="26,120,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="NameTextBox"  HorizontalAlignment="Left" Height="23" Margin="31,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+        <Label Content="Phone :" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="26,165,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="PhoneTextBox" MaxLength="10" HorizontalAlignment="Left" Height="23" Margin="31,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" PreviewTextInput="PhoneTextBox_previewtextinput" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+        <Label Content="Age :" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="26,210,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="AgeTextBox"  MaxLength="3" HorizontalAlignment="Left" Height="23" Margin="31,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" Grid.Column="1" Grid.ColumnSpan="2" PreviewTextInput="AgeTextBox_previewtextinput"/>
+
+        <Label Content="Gender :" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="26,257,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <RadioButton GroupName="Gender" x:Name="Male" Style="{StaticResource LabelStyle}" Content="Male" IsChecked="True" HorizontalAlignment="Left" Margin="31,261,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <RadioButton GroupName="Gender" x:Name="Female" Style="{StaticResource LabelStyle}" Content="Female" HorizontalAlignment="Left" Margin="81,261,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.271,0.567" Grid.Column="2"/>
+
+        <Label Content="Blood Group :" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="296,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.237,0.346" Grid.Column="2"/>
+        <ComboBox x:Name="BloodGroupComboBox" HorizontalAlignment="Left" Margin="412,124,0,0" VerticalAlignment="Top" Width="186" Grid.Column="2"/>
+
+        <Label Content="Availability :" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="296,164,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.237,0.346" Grid.Column="2"/>
+        <RadioButton GroupName="BloodGroupAvailability" x:Name="Yes" Style="{StaticResource LabelStyle}" Content="Yes" IsChecked="True" IsEnabled="False" HorizontalAlignment="Left" Margin="412,170,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+        <RadioButton GroupName="BloodGroupAvailability" x:Name="No" Style="{StaticResource LabelStyle}" Content="No" IsEnabled="False" HorizontalAlignment="Left" Margin="513,170,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.271,0.567" Grid.Column="2"/>
+
+        <Label Content="Province :" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="296,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.237,0.346" Grid.Column="2"/>
+        <ComboBox x:Name="ProvinceComboBox" HorizontalAlignment="Left" Margin="412,214,0,0" VerticalAlignment="Top" Width="186" SelectionChanged="ProvinceComboBox_SelectionChanged" Grid.Column="2"/>
+
+        <Label Content="City :" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="296,257,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.237,0.346" Grid.Column="2"/>
+        <ComboBox x:Name="CityComboBox" HorizontalAlignment="Left" Margin="412,261,0,0" VerticalAlignment="Top" Width="186" Grid.Column="2"/>
+
+        <Label Content="Date :" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="296,304,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.237,0.346" Grid.Column="2"/>
+        <TextBox x:Name="DateTextBox" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="412,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Grid.Column="2"/>
+
+        <Button x:Name="AddButton" Content="Add" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" Margin="198,400,0,0" VerticalAlignment="Top" Click="AddButton_Click" Grid.Column="2"/>
+        <Button x:Name="ResetButton" Content="Reset" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" Margin="338,400,0,0" VerticalAlignment="Top" Click="ResetButton_Click" Grid.Column="2"/>
+        <Button Content="Close" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" Margin="478,400,0,0" VerticalAlignment="Top" Click="CloseButton_Click" Grid.Column="2"/>
+    </Grid>
+</Window>

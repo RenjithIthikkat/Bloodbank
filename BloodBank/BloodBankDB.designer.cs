@@ -42,13 +42,19 @@ namespace BloodBank
     partial void InsertDonor(Donor instance);
     partial void UpdateDonor(Donor instance);
     partial void DeleteDonor(Donor instance);
+    partial void InsertUserType(UserType instance);
+    partial void UpdateUserType(UserType instance);
+    partial void DeleteUserType(UserType instance);
+    partial void InsertBloodRequest(BloodRequest instance);
+    partial void UpdateBloodRequest(BloodRequest instance);
+    partial void DeleteBloodRequest(BloodRequest instance);
     partial void InsertCredential(Credential instance);
     partial void UpdateCredential(Credential instance);
     partial void DeleteCredential(Credential instance);
     #endregion
 		
 		public BloodBankDBDataContext() : 
-				base(global::BloodBank.Properties.Settings.Default.BloodBankDBConnectionString, mappingSource)
+				base(global::BloodBank.Properties.Settings.Default.BloodBankDBConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -106,6 +112,22 @@ namespace BloodBank
 			get
 			{
 				return this.GetTable<Donor>();
+			}
+		}
+		
+		public System.Data.Linq.Table<UserType> UserTypes
+		{
+			get
+			{
+				return this.GetTable<UserType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BloodRequest> BloodRequests
+		{
+			get
+			{
+				return this.GetTable<BloodRequest>();
 			}
 		}
 		
@@ -954,6 +976,298 @@ namespace BloodBank
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserType")]
+	public partial class UserType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _TypeDesc;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTypeDescChanging(string value);
+    partial void OnTypeDescChanged();
+    #endregion
+		
+		public UserType()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeDesc", DbType="NChar(10)")]
+		public string TypeDesc
+		{
+			get
+			{
+				return this._TypeDesc;
+			}
+			set
+			{
+				if ((this._TypeDesc != value))
+				{
+					this.OnTypeDescChanging(value);
+					this.SendPropertyChanging();
+					this._TypeDesc = value;
+					this.SendPropertyChanged("TypeDesc");
+					this.OnTypeDescChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BloodRequest")]
+	public partial class BloodRequest : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _HospitalId;
+		
+		private string _Status;
+		
+		private int _BloodGroupId;
+		
+		private System.Nullable<int> _DonorId;
+		
+		private System.Nullable<System.DateTime> _DonarDate;
+		
+		private System.DateTime _RequestDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnHospitalIdChanging(int value);
+    partial void OnHospitalIdChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
+    partial void OnBloodGroupIdChanging(int value);
+    partial void OnBloodGroupIdChanged();
+    partial void OnDonorIdChanging(System.Nullable<int> value);
+    partial void OnDonorIdChanged();
+    partial void OnDonarDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDonarDateChanged();
+    partial void OnRequestDateChanging(System.DateTime value);
+    partial void OnRequestDateChanged();
+    #endregion
+		
+		public BloodRequest()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HospitalId", DbType="Int NOT NULL")]
+		public int HospitalId
+		{
+			get
+			{
+				return this._HospitalId;
+			}
+			set
+			{
+				if ((this._HospitalId != value))
+				{
+					this.OnHospitalIdChanging(value);
+					this.SendPropertyChanging();
+					this._HospitalId = value;
+					this.SendPropertyChanged("HospitalId");
+					this.OnHospitalIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BloodGroupId", DbType="Int NOT NULL")]
+		public int BloodGroupId
+		{
+			get
+			{
+				return this._BloodGroupId;
+			}
+			set
+			{
+				if ((this._BloodGroupId != value))
+				{
+					this.OnBloodGroupIdChanging(value);
+					this.SendPropertyChanging();
+					this._BloodGroupId = value;
+					this.SendPropertyChanged("BloodGroupId");
+					this.OnBloodGroupIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonorId", DbType="Int")]
+		public System.Nullable<int> DonorId
+		{
+			get
+			{
+				return this._DonorId;
+			}
+			set
+			{
+				if ((this._DonorId != value))
+				{
+					this.OnDonorIdChanging(value);
+					this.SendPropertyChanging();
+					this._DonorId = value;
+					this.SendPropertyChanged("DonorId");
+					this.OnDonorIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonarDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DonarDate
+		{
+			get
+			{
+				return this._DonarDate;
+			}
+			set
+			{
+				if ((this._DonarDate != value))
+				{
+					this.OnDonarDateChanging(value);
+					this.SendPropertyChanging();
+					this._DonarDate = value;
+					this.SendPropertyChanged("DonarDate");
+					this.OnDonarDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestDate", DbType="DateTime NOT NULL")]
+		public System.DateTime RequestDate
+		{
+			get
+			{
+				return this._RequestDate;
+			}
+			set
+			{
+				if ((this._RequestDate != value))
+				{
+					this.OnRequestDateChanging(value);
+					this.SendPropertyChanging();
+					this._RequestDate = value;
+					this.SendPropertyChanged("RequestDate");
+					this.OnRequestDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Credential")]
 	public partial class Credential : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -968,6 +1282,8 @@ namespace BloodBank
 		
 		private string _Type;
 		
+		private string _Description;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -980,6 +1296,8 @@ namespace BloodBank
     partial void OnPasswordChanged();
     partial void OnTypeChanging(string value);
     partial void OnTypeChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
     #endregion
 		
 		public Credential()
@@ -1063,6 +1381,26 @@ namespace BloodBank
 					this._Type = value;
 					this.SendPropertyChanged("Type");
 					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(100)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
 				}
 			}
 		}

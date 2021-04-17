@@ -9,14 +9,14 @@ namespace BloodBank
     /// </summary>
     /// 
 
-    public partial class ViewDonors : Window
+    public partial class Appointment : Window
     {
         private BloodBankDBDataContext DC;
         private List<int> IdList;
         private int FilterApplied = -1;
         private String FilterText;
 
-        public ViewDonors()
+        public Appointment()
         {
             InitializeComponent();
             
@@ -45,7 +45,8 @@ namespace BloodBank
                             BloodAvailable = D.BloodAvailable == 1 ? "Yes" : "No",
                             D.Date
                         };
-          
+         
+
             DonorsDataGrid.ItemsSource = table;
 
             IdList.Clear();
@@ -66,7 +67,7 @@ namespace BloodBank
             int Id = IdList[selectedRowIndex];
             var Donor = (from D in DC.Donors where D.Id == Id select D).Single();
 
-            EditDonor form = new EditDonor(Donor);
+            AppointmentApproval form = new AppointmentApproval(Donor);
             form.ShowDialog();
             ApplyFilter();
 
@@ -167,8 +168,7 @@ namespace BloodBank
                              D.Gender,
                              City = C.CityName,
                              Province = P.ProvinceName,
-                             BloodGroup = BG.Name,
-                             BloodAvailable = D.BloodAvailable == 1 ? "Yes" : "No",
+                             BloodGroup = BG.Name,                            
                              D.Date
                          };
 
@@ -198,8 +198,7 @@ namespace BloodBank
                             D.Gender,
                             City = C.CityName,
                             Province = P.ProvinceName,
-                            BloodGroup = BG.Name,
-                            BloodAvailable = D.BloodAvailable == 1 ? "Yes" : "No",
+                            BloodGroup = BG.Name,                            
                             D.Date
                         };
             DonorsDataGrid.ItemsSource = table;
@@ -291,8 +290,7 @@ namespace BloodBank
                             D.Gender,
                             City = C.CityName,
                             Province = P.ProvinceName,
-                            BloodGroup = BG.Name,
-                            BloodAvailable = D.BloodAvailable == 1 ? "Yes" : "No",
+                            BloodGroup = BG.Name,                           
                             D.Date
                         };
             DonorsDataGrid.ItemsSource = table;
@@ -320,8 +318,7 @@ namespace BloodBank
                             D.Gender,
                             City = C.CityName,
                             Province = P.ProvinceName,
-                            BloodGroup = BG.Name,
-                            BloodAvailable = D.BloodAvailable == 1 ? "Yes" : "No",
+                            BloodGroup = BG.Name,                          
                             D.Date
                         };
             DonorsDataGrid.ItemsSource = table;

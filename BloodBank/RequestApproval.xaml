@@ -1,0 +1,63 @@
+﻿<Window x:Class="BloodBank.RequestApproval"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BloodBank"
+        mc:Ignorable="d"
+        Title="EditDonorDetails" Height="500" Width="800" Left="50" Top="50">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle">
+            <Setter Property="FrameworkElement.Height" Value="35"/>
+            <Setter Property="FrameworkElement.Width" Value="120"/>
+            <Setter Property="Control.FontFamily" Value="Verdana"/>
+            <Setter Property="Control.FontSize" Value="14"/>
+            <Setter Property="Control.FontWeight" Value="ExtraBold"/>
+            <Setter Property="Control.Foreground" Value="White"/>
+            <Setter Property="Control.Background" Value="CornflowerBlue"/>
+        </Style>
+        <Style x:Key="LabelStyle">
+            <Setter Property="Control.FontFamily" Value="Verdana"/>
+            <Setter Property="Control.FontSize" Value="14"/>
+            <Setter Property="Control.FontWeight" Value="DemiBold"/>
+            <Setter Property="Control.Foreground" Value="CornflowerBlue"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="LabelStyle">
+                <Setter Property="Label.FontFamily" Value="Verdana"/>
+                <Setter Property="Label.FontSize" Value="14"/>
+                <Setter Property="Label.FontWeight" Value="DemiBold"/>
+                <Setter Property="Label.Foreground" Value="CornflowerBlue"/>
+            </Style>
+            <Style x:Key="ButtonStyle">
+                <Setter Property="Button.Height" Value="35"/>
+                <Setter Property="Button.Width" Value="120"/>
+                <Setter Property="Button.FontFamily" Value="Verdana"/>
+                <Setter Property="Button.FontSize" Value="14"/>
+                <Setter Property="Button.FontWeight" Value="ExtraBold"/>
+                <Setter Property="Button.Foreground" Value="White"/>
+                <Setter Property="Button.Background" Value="CornflowerBlue"/>
+            </Style>
+        </Grid.Resources>
+        <Label x:Name="lbl_RequestApproval" Content="Request Approval" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="26,71,0,0" VerticalAlignment="Top" FontSize="20" Background="#FFFC1212" Foreground="#FFE7E0DD"/>
+        <Rectangle Fill="#FFFA2F0D" HorizontalAlignment="Left" Height="63" Stroke="Black" VerticalAlignment="Top" Width="792"/>
+        <Label Content="Blood Bank" Foreground="White" HorizontalAlignment="Left" Margin="285,0,0,0" VerticalAlignment="Top" FontSize="40" Background="#FFF71B1B"/>
+
+        <Label Content="Request Number" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="26,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.237,0.346" Foreground="#FFED6964"/>
+
+        <Label Content="Hospital Name :" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="26,164,0,0" VerticalAlignment="Top" Foreground="#FFEE3B14"/>
+        <!-- <TextBox x:Name="GenderTextBox" HorizontalAlignment="Left" Height="23" Margin="119,308,0,0" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Top" Width="192"/> -->
+
+        <Button x:Name="btn_Approve" Content="Approve" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" Margin="114,313,0,0" VerticalAlignment="Top" Click="btn_Approve_Click" Background="#FFF04212"/>
+        <Button x:Name="btn_Reject" Content="Reject" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" Margin="469,313,0,0" VerticalAlignment="Top" Click="btn_Reject_Click" RenderTransformOrigin="1.863,0.909" Background="#FFF34110"/>
+        <Label Content="" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="422,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.237,0.346" IsEnabled="False"/>
+        <TextBox x:Name="txt_requestNumber" HorizontalAlignment="Left" Height="23" Margin="360,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="txt_HospitalName" HorizontalAlignment="Left" Height="23" Margin="360,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" IsEnabled="False"/>
+        <ComboBox x:Name="ddl_donors" HorizontalAlignment="Left" Margin="360,214,0,0" VerticalAlignment="Top" Width="299"/>
+        <Label x:Name="lbl_Donor" Content="Available Donors" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="31,214,0,0" VerticalAlignment="Top" Width="182" Foreground="#FFED8264"/>
+        <DatePicker x:Name="dtp_date" HorizontalAlignment="Left" Margin="379,265,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_Donor_Date" Content="Available Donors" Style="{StaticResource LabelStyle}" HorizontalAlignment="Left" Margin="31,261,0,0" VerticalAlignment="Top" Width="182" Foreground="#FFED8B64"/>
+    </Grid>
+</Window>
